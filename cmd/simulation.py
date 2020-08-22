@@ -14,40 +14,15 @@ import matplotlib.pyplot as plt
 
 ##############
 # CLASES
-class Component:
-    def __init__(self, fail_ratio, repair_ratio, state):
-        self.fail_ratio = fail_ratio
-        self.repair_ratio = repair_ratio
-        self.state = state
+from src.domain.component import Component
+from src.domain.system import System_Status
+from src.domain.simulation_param import Simulation
 
-
-class System_Status():
-    def __init__(self, plant_state=None):
-        if plant_state is None:
-            plant_state = [1, 1, 1]
-        self.plant_state = plant_state
-
-    def __str__(self):
-        return f"El estado de la planta es {self.plant_state}"
-
-
-class Event:
+""" class Event:
     def __init__(self, plant_state, timestamp, random):
         self.plant_state = plant_state
         self.timestamp = timestamp
-        self.random = random
-
-
-class Simulation:
-    def __init__(self, mission_time, executions_number):
-        self.executions_number = executions_number  # An integer.
-        self.executions = []
-        self.results = []  # A list that contains the results. Initialized empty.
-        self.mission_time = mission_time
-
-    def __str__(self):
-        return f"El número de simulaciones son {self.executions_number} y el tiempo de misión es de {self.mission_time} unidades de tiempo"
-
+        self.random = random """
 
 def lambdas(a):
     lambda_system = []
